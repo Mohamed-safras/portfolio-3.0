@@ -10,6 +10,8 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
+import Image from "next/image";
+import { personalInfo } from "@/data";
 
 export const BentoGrid = ({
   className,
@@ -69,7 +71,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "awsafras@gmail.com";
+    const text = personalInfo.email;
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -78,7 +80,7 @@ export const BentoGridItem = ({
     <div
       className={cn(
         // remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-lg border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
         className
       )}
       style={{
@@ -93,10 +95,16 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              width={200}
+              height={200}
+              className={cn(imgClassName, "object-cover object-center")}
+              // layout="fill" // Makes the image cover the div with w-full h-full
+              objectFit="cover" // Ensures the image covers the entire container
+              objectPosition="center" // Centers the image
+              priority // Optional: prioritize loading if it's important
             />
           )}
         </div>
@@ -106,11 +114,16 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
               //   width={220}
+              width={200}
+              height={200}
               className="object-cover object-center w-full h-full"
+              objectFit="cover" // Ensures the image covers the entire container
+              objectPosition="center" // Centers the image
+              priority // Optional: prioritize loading if it's important
             />
           )}
         </div>

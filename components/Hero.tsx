@@ -3,6 +3,7 @@ import { TextGenerateEffect } from "./ui/text-generate-effect";
 import TypeWriter from "./TypeWriter";
 import MagicButton from "./ui/MagicButton";
 import { MdArrowOutward } from "react-icons/md";
+import { personalInfo } from "@/data";
 
 const Hero = () => {
   return (
@@ -37,7 +38,8 @@ const Hero = () => {
             </span>
           </TextGenerateEffect>
           <h4 className="text-[#E4ECFF] font-normal text-sm text-center  mb-5 md:tracking-widest md:text-base lg:text-base">
-            Hi! I&apos;m Mohamed Safras, a Software Engineer based in Sri Lanka.
+            Hi! I&apos;m {personalInfo.name}, a Software Engineer based in Sri
+            Lanka.
           </h4>
           <a href="#about">
             <MagicButton
