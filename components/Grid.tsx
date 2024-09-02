@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
+import { BentoGrid } from "./ui/BentoGrid";
 import { gridItems } from "@/data";
 import { useState } from "react";
+import { BentoGridItem } from "./ui/BentoGridItem";
 
 const Grid = () => {
   const [isTechStackPopUp, setIsTechStackPopUp] = useState(false);
