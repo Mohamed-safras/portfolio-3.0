@@ -8,13 +8,13 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { NavItems } from "@/interface/navItem";
+import { NavItem } from "@/interface/navitem";
 
 export const FloatingNav = ({
   navItems,
   className,
 }: {
-  navItems: NavItems[];
+  navItems: NavItem[];
   className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
