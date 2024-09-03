@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 import Image from "next/image";
+import { client } from "../sanity/sanity";
+import { groq } from "next-sanity";
 
 const Experience = () => {
   return (

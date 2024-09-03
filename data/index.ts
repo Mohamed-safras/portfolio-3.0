@@ -71,21 +71,6 @@ export const gridItems = [
 
 export const projects = [
   {
-    id: 1,
-    title: "Transform Your PDFs into Interative Conversations",
-    des: "Upload your document, and our chatbot will answer questions, summarize content, and answer all your Qs. Ideal for everyone, Chat with PDF turns static documents into dynamic conversations,enhancing productivity 10x fold effortlessly.",
-    img: "/query-assist.svg",
-    iconLists: [
-      "/next.svg",
-      "/tail.svg",
-      "/shadcn-ui.svg",
-      "/ts.svg",
-      "/c.svg",
-    ],
-    link: "https://query-assist.vercel.app/",
-    liveLink: "https://query-assist.vercel.app/",
-  },
-  {
     id: 2,
     title: "Yoom - Video Conferencing App",
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
