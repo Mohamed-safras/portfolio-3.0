@@ -9,7 +9,7 @@ import { groq } from "next-sanity";
 
 const Experience = () => {
   return (
-    <div className="py-20 w-full">
+    <section className="py-20 w-full" id="experience">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
@@ -53,7 +53,7 @@ const Experience = () => {
           </Button>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

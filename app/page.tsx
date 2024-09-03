@@ -1,4 +1,5 @@
 "use client";
+import Clients from "@/components/Clients";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
@@ -14,12 +15,7 @@ export default function Page() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        {/* 
-        
         <Clients />
-        
-        
-         */}
         <RecentProjects />
         <Experience />
         {/* <Approach /> */}
