@@ -56,8 +56,8 @@ const Clients = () => {
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
-        {!isCompaniesLoading && (
-          <div className="h-[50vh] md:h-[30rem] rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
+        {!isTestimonialsLoading && (
+          <div className="max-h-fit h-full rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
               items={testimonials}
               direction="right"
@@ -67,7 +67,7 @@ const Clients = () => {
         )}
 
         {!isCompaniesLoading && (
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-lg:mt-10">
             {companies?.map(({ company_logo, _id }) => (
               <React.Fragment key={_id}>
                 <div className="flex md:max-w-60 max-w-32 gap-2">

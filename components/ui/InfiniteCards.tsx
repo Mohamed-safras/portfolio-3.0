@@ -80,7 +80,7 @@ export const InfiniteMovingCards = ({
         ref={scrollerRef}
         className={cn(
           // change gap-16
-          "flex min-w-full shrink-0 gap-16 py-4 w-max flex-wrap",
+          "flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
@@ -108,7 +108,7 @@ export const InfiniteMovingCards = ({
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
 
-              <span className=" relative z-20 text-sm md:text-base leading-[1.6] text-white font-light">
+              <span className=" relative z-20 text-xs md:text-base leading-[1.6] text-white font-light">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
@@ -118,16 +118,16 @@ export const InfiniteMovingCards = ({
                     alt={item.client_profile}
                     width={40}
                     height={40}
-                    className="rounded-full object-fit aspect-square"
+                    className="w-[35px] h-[35px] md:w-[40px] md:h-[40px] rounded-full object-cover aspect-square"
                   />
                 </div>
                 <span className="flex flex-col gap-1">
                   {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className="text-xl font-bold leading-[1.6] text-white">
+                  <span className="text-sm md:text-xl font-bold leading-[1.6] text-white">
                     {item.name}
                   </span>
                   {/* change text color */}
-                  <span className=" text-sm leading-[1.6] text-white-200 font-normal">
+                  <span className="text-xs md:text-sm leading-[1.6] text-white-200 font-normal">
                     {item.title}
                   </span>
                 </span>
