@@ -35,7 +35,7 @@ const Clients = () => {
     try {
       setIsCompaniesLoading(true);
       const res = await client.fetch(groq`${COMPANIES}`);
-      console.log(res);
+
       setCompanies(res);
       setIsCompaniesLoading(false);
     } catch (error: any) {
@@ -49,13 +49,13 @@ const Clients = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-20">
+    <section id="testimonials" className="py-20 w-full">
       <h1 className="heading">
         Kind words from
         <span className="text-purple"> satisfied clients</span>
       </h1>
 
-      <div className="flex flex-col items-center max-lg:mt-10">
+      <div className="flex flex-col items-center mt-10 max-lg:mt-10">
         {!isTestimonialsLoading && (
           <div className="max-h-fit h-full rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
@@ -67,7 +67,7 @@ const Clients = () => {
         )}
 
         {!isCompaniesLoading && (
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-lg:mt-10">
+          <div className="flex flex-wrap items-center justify-center mt-10 gap-8 md:gap-16 max-lg:mt-10">
             {companies?.map(({ company_logo, _id }) => (
               <React.Fragment key={_id}>
                 <div className="flex md:max-w-60 max-w-32 gap-2">

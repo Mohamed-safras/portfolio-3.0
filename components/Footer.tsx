@@ -8,19 +8,19 @@ import Link from "next/link";
 const Footer = () => {
   const date = new Date().getFullYear();
   return (
-    <footer className="w-full h-full pt-20 pb-10" id="contact">
+    <footer className="w-full py-20" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+      <div className="w-full absolute left-0 -bottom-0 min-h-60">
         <Image
           src="/footer-grid.svg"
           alt="grid"
-          width={0}
-          height={0}
-          className="w-full h-full opacity-50 "
+          width={500}
+          height={500}
+          className="w-full opacity-50"
         />
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex h-full flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
@@ -38,7 +38,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm mb-2 md:font-normal font-light">
+        <p className="md:text-base text-sm mb-10 md:font-normal font-light">
           Copyright © {date} {personalInfo.name}
         </p>
 
