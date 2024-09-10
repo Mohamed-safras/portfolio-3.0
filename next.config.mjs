@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "cdn.sanity.io",
       },
+      {
+        hostname: "assets.aceternity.com",
+      },
     ],
   },
 };
