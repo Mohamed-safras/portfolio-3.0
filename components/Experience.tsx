@@ -8,9 +8,9 @@ import Developer from "./Developer";
 import { TimelineExperience } from "./TimeLineExperience";
 
 const Experience = () => {
-  const [animationName, setAnimationName] = useState<string>("victory");
+  const [animationName, setAnimationName] = useState<string>("idel");
 
-  const handleAnimation = (animationName: string) => {
+  const handleAnimation = (animationName: string = "idel") => {
     setAnimationName(animationName);
   };
 

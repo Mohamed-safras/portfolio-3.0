@@ -8,16 +8,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { client } from "../sanity/sanity";
 import { Project } from "@/interface/project";
-import { EXPERIENCE_GROQ } from "@/sanity/queries";
+import { PROJECTS_GROQ } from "@/sanity/queries";
 
 const RecentProjects = () => {
   const [newProjects, setNewProjects] = useState<Project[]>([]);
 
   const getProject = async () => {
     try {
-      const response = await client.fetch(groq`${EXPERIENCE_GROQ}`);
+      const response = await client.fetch(groq`${PROJECTS_GROQ}`);
       setNewProjects(response);
-      console.log(response);
     } catch (err) {
       console.log(err);
     }

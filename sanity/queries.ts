@@ -1,4 +1,4 @@
-export const EXPERIENCE_GROQ = `*[_type == "projects"]{
+export const PROJECTS_GROQ = `*[_type == "projects"]{
     "techstacks": techstack[].asset->url,
     "thumbnail":thumbnail.asset->url,
     "title":title,

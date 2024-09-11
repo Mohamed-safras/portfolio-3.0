@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 interface TimelineEntry {
   title: string;
   content: React.ReactNode;
-  animationName?: string;
+  animationName: string;
 }
 
 export const Timeline = ({
@@ -47,7 +47,9 @@ export const Timeline = ({
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div
-            onClick={() => handleAnimation(item.animationName || "idel")}
+            onClick={() => handleAnimation(item.animationName)}
+            onPointerOver={() => handleAnimation(item.animationName)}
+            onPointerLeave={() => handleAnimation("idle")}
             key={index}
             className="flex justify-start pt-5 transition-shadow md:pt-10 hover:bg-black-200 hover:rounded cursor-pointer"
           >
