@@ -4,41 +4,43 @@ import { personalInfo, socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
 import Image from "next/image";
 import Link from "next/link";
+import { ContactForm } from "./ContactForm";
 
 const Footer = () => {
   const date = new Date().getFullYear();
   return (
     <footer className="w-full py-20" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-0 min-h-60">
+      {/* <div className="w-full  absolute left-0 -bottom-0 min-h-60">
         <Image
           src="/footer-grid.svg"
           alt="grid"
           width={500}
           height={500}
-          className="w-full opacity-50"
+          className="w-full opacity-30"
         />
-      </div>
+      </div> */}
 
-      <div className="flex h-full flex-col items-center">
+      <div className="flex h-full flex-col items-center mb-10">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
+        <p className="text-white-200 md:mt-10 mt-4 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-        <Link href={`mailto:${personalInfo.email}`}>
+        {/* <Link href={`mailto:${personalInfo.email}`}>
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
           />
-        </Link>
+        </Link> */}
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm mb-10 md:font-normal font-light">
+      <ContactForm />
+      <div className="flex flex-col items-center justify-between mt-10 md:flex-row md:items-center ">
+        <p className="text-sm mb-10 md:text-base md:mb-0 md:font-normal font-light">
           Copyright © {date} {personalInfo.name}
         </p>
 
