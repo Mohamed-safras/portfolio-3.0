@@ -8,6 +8,9 @@ const nextConfig = {
       {
         hostname: "assets.aceternity.com",
       },
+      {
+        hostname: "53.fs1.hubspotusercontent-na1.net",
+      },
     ],
   },
 };
