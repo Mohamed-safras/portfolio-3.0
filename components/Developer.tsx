@@ -37,7 +37,7 @@ const Developer = ({ animationName = "idel", ...props }) => {
   useEffect(() => {
     actions[animationName]?.reset()?.fadeIn(0.5)?.play();
     return () => actions[animationName]?.fadeOut(0.5);
-  }, [animationName]);
+  }, [actions, animationName]);
 
   return (
     <group ref={group} {...props} dispose={null}>
