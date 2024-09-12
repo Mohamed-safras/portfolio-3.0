@@ -1,19 +1,36 @@
 "use client";
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import Developer from "./Developer";
 import { TimelineExperience } from "./TimeLineExperience";
+import { Expericene } from "@/interface/experience";
+import Clients from "./Clients";
+import { client } from "@/sanity/sanity";
+import { EXPERIENCE_GROQ } from "@/sanity/queries";
+import { groq } from "next-sanity";
 
 const Experience = () => {
   const [animationName, setAnimationName] = useState<string>("idel");
+  const [experience, setExperience] = useState<Expericene[]>([]);
 
   const handleAnimation = (animationName: string = "idel") => {
     setAnimationName(animationName);
   };
 
+  const getExperiences = async () => {
+    try {
+      const res = await client.fetch(groq`${EXPERIENCE_GROQ}`);
+      console.log(res);
+      setExperience(res);
+    } catch (err: any) {}
+  };
+
+  useEffect(() => {
+    getExperiences();
+  }, []);
   return (
     <section className="py-20" id="experience">
       <div className="w-full text-white-600">

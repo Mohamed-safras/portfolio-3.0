@@ -21,3 +21,23 @@ export const COMPANIES = `*[_type == "companies"]{
   "name":name,
   "_id":_id
 }`;
+
+export const EXPERIENCE_GROQ = `*[_type == "experience"]{
+  "workplace_name":workplace_name,
+  "start_date":start_date,
+  "workplace_logo":image.asset->url,
+  "end_date":end_date,
+  "role":role,
+  "year":year,
+  "_id":_id,
+  "task_handled":task_handled[]{
+  style,
+  list,
+  marks[]{
+    value
+  },
+  children[]{
+    text
+  }
+}
+}`;
