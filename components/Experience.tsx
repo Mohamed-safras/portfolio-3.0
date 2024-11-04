@@ -7,7 +7,6 @@ import CanvasLoader from "../components/CanvasLoader";
 import Developer from "./Developer";
 import { TimelineExperience } from "./TimeLineExperience";
 import { Expericene } from "@/interface/experience";
-import Clients from "./Clients";
 import { client } from "@/sanity/sanity";
 import { EXPERIENCE_GROQ } from "@/sanity/queries";
 import { groq } from "next-sanity";

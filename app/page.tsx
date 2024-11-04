@@ -15,8 +15,8 @@ export default function Page() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <RecentProjects />
         <Experience />
+        <RecentProjects />
         <Clients />
         {/* <Approach /> */}
         <Footer />
