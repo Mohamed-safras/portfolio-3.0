@@ -23,14 +23,17 @@ const Experience = () => {
   const getExperiences = async () => {
     try {
       const res = await client.fetch(groq`${EXPERIENCE_GROQ}`);
-      console.log(res);
+
       setExperience(res);
-    } catch (err: any) {}
+    } catch (err: any) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
     getExperiences();
   }, []);
+
   return (
     <section className="py-20" id="experience">
       <div className="w-full text-white-600">
@@ -58,7 +61,10 @@ const Experience = () => {
 
           <div className="col-span-2 rounded-lg bg-black-100 border border-black-300">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
-              <TimelineExperience handleAnimation={handleAnimation} />
+              <TimelineExperience
+                experience={experience}
+                handleAnimation={handleAnimation}
+              />
             </div>
           </div>
         </div>

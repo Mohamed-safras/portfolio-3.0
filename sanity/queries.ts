@@ -23,21 +23,14 @@ export const COMPANIES = `*[_type == "companies"]{
 }`;
 
 export const EXPERIENCE_GROQ = `*[_type == "experience"]{
-  "workplace_name":workplace_name,
-  "start_date":start_date,
-  "workplace_logo":image.asset->url,
-  "end_date":end_date,
-  "role":role,
-  "year":year,
-  "_id":_id,
-  "task_handled":task_handled[]{
-  style,
-  list,
-  marks[]{
-    value
-  },
-  children[]{
-    text
-  }
+   "workplace_name":workplace_name,
+   "start_date":start_date,
+   "workplace_logo":workplace_logo.asset->url,
+    "end_date":end_date,
+    "role":role,
+    "year":year,  "_id":_id,
+    "task_handled":task_handled,
+    "techstacks":techstack,
+    "work_place_link":workplace_official_link
 }
-}`;
+`;

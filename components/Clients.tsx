@@ -7,17 +7,16 @@ import { InfiniteMovingCards } from "./ui/InfiniteCards";
 import { Companies, TestimonialItem } from "@/interface/testimonials";
 import { groq } from "next-sanity";
 import { COMPANIES, TESTIMONIALS_GROQ } from "@/sanity/queries";
-import Image from "next/image";
 
 const Clients = () => {
   const [testimonials, setTestimonials] = useState<TestimonialItem[]>();
-  const [companies, setCompanies] = useState<Companies[]>();
+  // const [companies, setCompanies] = useState<Companies[]>();
   const [isTestimonialsLoading, setIsTestimonialsLoading] =
     useState<boolean>(false);
   const [hasTestimonialsError, setHasTestimonialsError] = useState<string>("");
 
-  const [isCompaniesLoading, setIsCompaniesLoading] = useState<boolean>(false);
-  const [hasCompaniesError, setHasCompaniesError] = useState<string>("");
+  // const [isCompaniesLoading, setIsCompaniesLoading] = useState<boolean>(false);
+  // const [hasCompaniesError, setHasCompaniesError] = useState<string>("");
 
   const getTestimonials = async () => {
     try {
@@ -31,21 +30,21 @@ const Clients = () => {
     }
   };
 
-  const getCompanies = async () => {
-    try {
-      setIsCompaniesLoading(true);
-      const res = await client.fetch(groq`${COMPANIES}`);
+  // const getCompanies = async () => {
+  //   try {
+  //     setIsCompaniesLoading(true);
+  //     const res = await client.fetch(groq`${COMPANIES}`);
 
-      setCompanies(res);
-      setIsCompaniesLoading(false);
-    } catch (error: any) {
-      setHasCompaniesError(error.message);
-    }
-  };
+  //     setCompanies(res);
+  //     setIsCompaniesLoading(false);
+  //   } catch (error: any) {
+  //     setHasCompaniesError(error.message);
+  //   }
+  // };
 
   useEffect(() => {
     getTestimonials();
-    getCompanies();
+    // getCompanies();
   }, []);
 
   return (
@@ -65,7 +64,7 @@ const Clients = () => {
             />
           </div>
         )}
-
+        {/* 
         {!isCompaniesLoading && (
           <div className="flex flex-wrap items-center justify-center mt-10 gap-8 md:gap-16 max-lg:mt-10">
             {companies?.map(({ company_logo, _id }) => (
@@ -85,7 +84,7 @@ const Clients = () => {
               </React.Fragment>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );

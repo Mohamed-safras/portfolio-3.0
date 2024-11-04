@@ -1,6 +1,5 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -12,6 +11,7 @@ interface TimelineEntry {
   title: string;
   content: React.ReactNode;
   animationName: string;
+  workplace_logo: string;
 }
 
 export const Timeline = ({
@@ -55,17 +55,13 @@ export const Timeline = ({
             className="flex justify-start py-5 transition-shadow md:py-7 hover:bg-black-200 hover:rounded cursor-pointer"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              {/* <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
-              </div> */}
+              
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <Image
-                  src={
-                    "https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/image8-2.jpg?width=600&name=image8-2.jpg"
-                  }
+                  src={item.workplace_logo}
                   width={500}
                   height={500}
-                  alt="figma"
+                  alt={item.title}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
