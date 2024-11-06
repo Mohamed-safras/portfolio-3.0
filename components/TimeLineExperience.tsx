@@ -12,8 +12,6 @@ export function TimelineExperience({
   experience: Expericene[];
   handleAnimation: (animationName?: string) => void;
 }) {
-  console.log(experience);
-
   const timelineEntries = experience
     .map(
       ({
