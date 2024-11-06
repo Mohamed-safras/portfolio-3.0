@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -46,16 +42,15 @@ export const Timeline = ({
       ref={containerRef}
     >
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <div
-            onClick={() => handleAnimation(item.animationName)}
-            onPointerOver={() => handleAnimation(item.animationName)}
+            onClick={() => handleAnimation(item?.animationName)}
+            onPointerOver={() => handleAnimation(item?.animationName)}
             onPointerLeave={() => handleAnimation("idle")}
             key={index}
             className="flex justify-start py-5 transition-shadow md:py-7 hover:bg-black-200 hover:rounded cursor-pointer"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <Image
                   src={item.workplace_logo}

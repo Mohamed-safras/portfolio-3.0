@@ -8,4 +8,6 @@ export interface Expericene {
   year: string;
   work_place_link: string;
   techstacks: string[];
+  id: number;
+  animationName: string;
 }
