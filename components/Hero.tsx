@@ -49,9 +49,9 @@ const Hero = () => {
           <div className="md:max-w-48 md:max-h-48 max-w-18 max-h-18 m-2">
             <Image src={Profile} alt="profile" className="rounded-full" />
           </div>
-          <a href="#about">
+          <a href="#contact">
             <MagicButton
-              title={"See my work"}
+              title={"Let's talk"}
               icon={<MdArrowOutward />}
               position="right"
             />
