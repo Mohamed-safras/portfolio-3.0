@@ -4,6 +4,8 @@ import TypeWriter from "./TypeWriter";
 import MagicButton from "./ui/MagicButton";
 import { MdArrowOutward } from "react-icons/md";
 import { personalInfo } from "@/data";
+import Profile from "../public/myprofile.jpg";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -44,6 +46,9 @@ const Hero = () => {
             Hi! I&apos;m {personalInfo.name}, a Software Engineer based in Sri
             Lanka.
           </h4>
+          <div className="md:max-w-48 md:max-h-48 max-w-18 max-h-18 m-2">
+            <Image src={Profile} alt="profile" className="rounded-full" />
+          </div>
           <a href="#about">
             <MagicButton
               title={"See my work"}
