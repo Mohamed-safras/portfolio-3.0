@@ -26,12 +26,15 @@ const Hero = () => {
           </h2>
 
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless"
+            words="Building high performant and scalable Full Stack Applications using"
             className="text-3xl font-bold text-center md:text-4xl lg:text-5xl"
           >
             <span className="text-[#CBACF9] inline">
               <TypeWriter
-                strings={["Usable Product", "User Experiences"]}
+                strings={[
+                  "Frontend - React JS, Next JS",
+                  "Backend - Node JS, Nest JS, Spring Boot, AWS",
+                ]}
                 loop={true}
                 autoStart={true}
               />
