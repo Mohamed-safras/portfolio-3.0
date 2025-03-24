@@ -30,7 +30,7 @@ export const FloatingNav = ({
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
-
+      console.log(current);
       if (scrollYProgress.get() < 0.05) {
         // also set true for the initial state
         setVisible(true);
@@ -41,6 +41,12 @@ export const FloatingNav = ({
           setVisible(false);
         }
       }
+
+      if (current > 0 && current <= 0.3) setNavBarIndicator(0);
+      if (current > 0.3 && current <= 0.48) setNavBarIndicator(1);
+      if (current > 0.49 && current <= 0.84) setNavBarIndicator(2);
+      if (current > 0.85 && current <= 0.94) setNavBarIndicator(3);
+      if (current > 0.95 && current <= 1) setNavBarIndicator(4);
     }
   });
 
