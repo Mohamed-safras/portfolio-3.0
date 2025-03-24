@@ -24,6 +24,7 @@ export const FloatingNav = ({
 
   // set true for the initial state so that nav bar is visible in the hero section
   const [visible, setVisible] = useState(true);
+  const [navBarIndicator, setNavBarIndicator] = useState(0);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -75,9 +76,13 @@ export const FloatingNav = ({
             className={cn(
               "relative dark:text-neutral-50 items-center flex space-x-0 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
+            onClick={() => setNavBarIndicator(idx)}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+            {navBarIndicator === idx && (
+              <div className="w-[6px] h-[6px] bg-neutral-50 absolute -bottom-3 right-0 left-[50%] rounded-full" />
+            )}
           </Link>
         ))}
       </motion.div>
